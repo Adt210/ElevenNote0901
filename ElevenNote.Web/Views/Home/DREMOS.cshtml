@@ -1,0 +1,22 @@
+﻿@{
+    var maxMonthsOfTheYear = 12;
+    var maxDaysOfTheWeek = 31;
+}
+<h1>DREMOS TAYLOR</h1>
+
+Months Of The Year:
+<select name="theOption">
+    @for (var i = 0; i <= maxMonthsOfTheYear; i++)
+{
+    <option value="@i">@i</option>
+}
+</select>
+
+
+Days Of The Week:
+<select name="theOption">
+    @for (var i = 0; i <= maxDaysOfTheWeek; i++)
+{
+    <option value="@i">@i</option>
+}
+</select>
