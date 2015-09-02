@@ -43,7 +43,7 @@ namespace ElevenNote.DataAccess
         // Below are the extra tables, aside from what's automatically created by the identity framework.
 
         public DbSet<Note> Notes { get; set; }
-
+ 
         #endregion
 
         #region Stuff to add because we're merging Identity Framework data creation with our own context
