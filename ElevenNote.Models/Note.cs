@@ -28,6 +28,8 @@ namespace ElevenNote.Models
         [DefaultValue(false)]
         public bool IsFavorite { get; set; }
 
+       
+
 
 
 

@@ -15,7 +15,7 @@ namespace ElevenNote.Services
     public class NoteService
     {
 
-        public bool Creat(NoteEditViewModel model, Guid userId)
+        public bool Create(NoteEditViewModel model, Guid userId)
         {
             using (var context = new ElevenNoteDataContext())
             {
@@ -43,7 +43,7 @@ namespace ElevenNote.Services
                                   DateModified = note.DateModified,
                                   Id = note.Id,
                                   Title = note.Title,
-                                  IsFavorite = note.IsFavorite
+                                  IsFavorite = note.IsFavorite,  
                               }).ToList();
 
                 return result;
