@@ -86,13 +86,23 @@ namespace ElevenNote.Web.Controllers
         }
 
 
-        
+        [HttpGet]
         [ActionName("Delete")]
-        public ActionResult DeleteGet(int Id)
+        public ActionResult DeletGet(int Id)
         {
             var noteService = new NoteService();
             var userId = Guid.Parse(User.Identity.GetUserId());
-            var note = (noteService.Delete(Id, userId));
+            var note = (noteService.GetById(Id, userId));
+            return View(note);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        public ActionResult DeletePost(int Id)
+        {
+            var noteService = new NoteService();
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var result = (noteService.Delete(Id, userId));
             return RedirectToAction("Index"); 
         }
 
