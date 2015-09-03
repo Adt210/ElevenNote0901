@@ -30,7 +30,6 @@ namespace ElevenNote.Services
                 return result == 1;
             }
         }
-
         public List<NoteListViewModel> GetAllForUser(Guid userId)
         {
             using (var context = new ElevenNoteDataContext())
