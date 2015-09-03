@@ -1,7 +1,7 @@
 ﻿@model ElevenNote.Models.ViewModels.NoteEditViewModel
 
 <div>
-    <h4>View Note</h4>
+    <h4>NoteEditViewModel</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -17,7 +17,15 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Contents)
+            @Html.Raw(Model.Contents.Replace("<script></script>",""))
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsFavorite)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsFavorite)
         </dd>
 
     </dl>
@@ -25,4 +33,5 @@
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
     @Html.ActionLink("Back to List", "Index")
+
 </p>
