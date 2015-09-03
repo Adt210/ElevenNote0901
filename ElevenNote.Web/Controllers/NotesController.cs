@@ -85,6 +85,7 @@ namespace ElevenNote.Web.Controllers
             return View(note);
         }
 
+    
 
         [HttpGet]
         [ActionName("Delete")]
@@ -103,6 +104,7 @@ namespace ElevenNote.Web.Controllers
             var noteService = new NoteService();
             var userId = Guid.Parse(User.Identity.GetUserId());
             var result = (noteService.Delete(Id, userId));
+            TempData.Add("Results", result ? "Note deleted." : "Note not deleted.");
             return RedirectToAction("Index"); 
         }
 
